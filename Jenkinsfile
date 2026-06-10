@@ -15,7 +15,7 @@ pipeline{
         }
         stage ('checkout SCM') {
             steps {
-                git 'https://github.com/priyanshu-bhatt/DevSecOps-CI-CD-Pipeline.git'
+                git 'https://github.com/ctnchetu/DevSecOps-CI-CD-Pipeline'
             }
         }
         stage ('Compiling Maven Code') {
@@ -73,7 +73,7 @@ pipeline{
                 stage('QA testing Stage'){
             steps{
                 sh 'docker rm -f qacontainer'
-                sh 'docker run -d --name qacontainer -p 8080:8080 priyanshu18/petshop:latest'
+                sh 'docker run -d --name qacontainer -p 8080:8080 ckharvi/petshop:latest'
                 sleep time: 60, unit: 'SECONDS'
                 retry(10){
                 
