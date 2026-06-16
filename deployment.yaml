@@ -12,6 +12,8 @@ spec:
       labels:
         app: petshop
     spec:
+      imagePullSecrets:
+      - name: dockerhub-secret
       containers:
       - name: petshop
         image: ckharvi/petshop:latest
